@@ -13,7 +13,7 @@ let windowState = [];
 app.use(async (req, res, next) => {
   const authToken = req.headers['authorization'];
 
-  if (authToken && isTokenExpired(authToken)) {
+  if (authToken && !isTokenExpired(authToken)) {
     return res.status(401).json({ message: 'Token expired. Please log in again.' });
   }
 
