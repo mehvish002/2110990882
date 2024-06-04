@@ -10,7 +10,7 @@ const endpoints = {
 const fetchNumbers = async (type, authToken) => {
   try {
     const response = await axios.get(endpoints[type], {
-      headers: { 'Authorization': "Bearer eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE3NTA2MjkyLCJpYXQiOjE3MTc1MDU5OTIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjYxMjQxMzkyLWQyMDctNGI4OS04ZDdjLWQwZTg5OGE0NmZmMSIsInN1YiI6Im1laHZpc2gwODgyLmJlMjFAY2hpdGthcmEuZWR1LmluIn0sImNvbXBhbnlOYW1lIjoiQ2hpdGthcmEgVW5pdmVyc2l0eSIsImNsaWVudElEIjoiNjEyNDEzOTItZDIwNy00Yjg5LThkN2MtZDBlODk4YTQ2ZmYxIiwiY2xpZW50U2VjcmV0IjoidVRia1hGa1FHSGltcEZ4RCIsIm93bmVyTmFtZSI6Ik1laHZpc2ggQWdnYXJ3YWwiLCJvd25lckVtYWlsIjoibWVodmlzaDA4ODIuYmUyMUBjaGl0a2FyYS5lZHUuaW4iLCJyb2xsTm8iOiIyMTEwOTkwODgyIn0.cpeHAiQVjrN2Ey6fbxavC26Sj-vH2ffJfwZZ8xvx79o" },
+      headers: { 'Authorization': authToken },
       timeout: 500
     });
     return response.data.numbers;
