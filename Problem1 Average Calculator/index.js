@@ -24,7 +24,7 @@ app.use(async (req, res, next) => {
 const isTokenExpired = (token) => {
   const decodedToken = jwt.decode(token);
   if (!decodedToken || !decodedToken.exp) {
-    return true; // Token is invalid or doesn't contain expiration
+    return true; 
   }
   const currentTime = Math.floor(Date.now() / 1000);
   return decodedToken.exp < currentTime;
